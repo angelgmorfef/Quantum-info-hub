@@ -1,0 +1,14 @@
+[
+  { "year": 1982, "event": "Propuesta de Feynman", "description": "Richard Feynman propone la idea de utilizar sistemas cuánticos para simular la física de otros sistemas cuánticos, sentando las bases teóricas de la computación cuántica." },
+  { "year": 1985, "event": "Máquina de Turing Cuántica", "description": "David Deutsch describe la primera máquina de Turing cuántica universal, demostrando que un computador cuántico podría simular cualquier sistema físico." },
+  { "year": 1994, "event": "Algoritmo de Shor", "description": "Peter Shor desarrolla un algoritmo cuántico capaz de factorizar números grandes en tiempo polinómico, amenazando la criptografía RSA moderna." },
+  { "year": 1996, "event": "Algoritmo de Grover", "description": "Lov Grover presenta un algoritmo de búsqueda cuántica que logra una aceleración cuadrática sobre las búsquedas clásicas en bases de datos no estructuradas." },
+  { "year": 1998, "event": "Primer Qubit Funcional", "description": "Se implementa el primer computador cuántico de 2 qubits funcional, resolviendo problemas simples utilizando resonancia magnética nuclear." },
+  { "year": 2001, "event": "IBM factoriza el 15", "description": "IBM demuestra el algoritmo de Shor en un procesador cuántico de 7 qubits, factorizando exitosamente el número 15 en sus factores primos 3 y 5." },
+  { "year": 2011, "event": "D-Wave One", "description": "D-Wave Systems anuncia el D-Wave One, el primer computador cuántico comercial con 128 qubits basado en templado cuántico (quantum annealing)." },
+  { "year": 2016, "event": "IBM Quantum Experience", "description": "IBM pone a disposición del público su plataforma IBM Quantum Experience, permitiendo a investigadores y desarrolladores acceder a procesadores cuánticos reales a través de la nube." },
+  { "year": 2019, "event": "Supremacía Cuántica de Google", "description": "Google anuncia que su procesador Sycamore de 53 qubits logró la 'supremacía cuántica', completando en 200 segundos un cálculo que tomaría 10,000 años a una supercomputadora clásica." },
+  { "year": 2021, "event": "IBM Eagle (127 qubits)", "description": "IBM presenta Eagle, su procesador cuántico de 127 qubits, rompiendo la barrera de los 100 qubits y estableciendo un nuevo récord industrial." },
+  { "year": 2023, "event": "IBM Condor (1,121 qubits)", "description": "IBM lanza Condor con 1,121 qubits superconductores, el procesador cuántico con más qubits del mundo, mientras introduce Heron optimizado para corrección de errores." },
+  { "year": 2024, "event": "Google Willow", "description": "Google presenta Willow, un chip cuántico de 105 qubits que por primera vez demuestra corrección de errores cuánticos por debajo del umbral, un hito considerado necesario para la computación cuántica práctica." }
+]

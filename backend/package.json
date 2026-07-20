@@ -1,0 +1,13 @@
+{
+  "name": "quantum-hub-backend",
+  "version": "1.0.0",
+  "description": "API RESTful para servir datos científicos sobre computación cuántica.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["quantum", "api", "express", "rest"],
+  "author": "DEVo",
+  "license": "MIT"
+}

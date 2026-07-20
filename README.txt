@@ -1,3 +1,0 @@
-Computadores cuanticos, para bien o para mal.
-
- La finalidad para este proyecto será realizar una sencilla pagina web utilizando las tecnologias: HTML, CSS y Js nativos, esto se llevara a cabo en el editor de codigo Visual Studio Code, no se utilizara ningun tipo de tecnologia adicional con la finalidad es explorar lo que estos software y crear algo de buena calidad con lo minimo que tienen para ofrecer. Para garantizar esto se realizara hincapie en el uso de una sematica correcta y tambien de grantizar un disenio responsive y escalable. 

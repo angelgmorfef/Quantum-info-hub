@@ -1,0 +1,138 @@
+.page {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-secondary);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.name {
+  font-family: var(--font-title);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--accent-secondary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+}
+
+.bio {
+  max-width: 680px;
+  margin: 0 auto;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.section {
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--accent-secondary);
+  margin-bottom: 2rem;
+}
+
+/* Skills */
+.skills {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.skill {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.skillHeader {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.skillName { color: var(--text-primary); font-weight: 500; }
+.skillLevel { color: var(--text-muted); font-family: var(--font-mono); }
+
+.skillBar {
+  height: 6px;
+  background-color: var(--bg-tertiary);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.skillFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--accent-secondary));
+  border-radius: 999px;
+  animation: barGrow 1s ease forwards;
+}
+
+@keyframes barGrow {
+  from { width: 0 !important; }
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-left: 2px solid var(--border-color);
+  padding-left: 2rem;
+  margin-left: 1rem;
+}
+
+.timelineItem {
+  position: relative;
+  padding-bottom: 2.5rem;
+}
+
+.timelineItem::before {
+  content: '';
+  position: absolute;
+  left: -2.55rem;
+  top: 0.4rem;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--accent-secondary);
+  border: 2px solid var(--bg-primary);
+}
+
+.timelineYear {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-secondary);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.1em;
+}
+
+.timelineEvent {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.timelineDesc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}

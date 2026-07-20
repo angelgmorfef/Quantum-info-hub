@@ -1,0 +1,112 @@
+.card {
+  margin-bottom: 4rem;
+  scroll-margin-top: 100px;
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease,
+    background-color var(--transition-normal);
+  animation: cardReveal 0.6s ease forwards;
+}
+
+.card:hover {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+@keyframes cardReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.title {
+  font-family: var(--font-title);
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.title::before {
+  content: '//';
+  color: var(--accent-secondary);
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.content {
+  color: var(--text-secondary);
+  line-height: 1.75;
+  font-size: 1.05rem;
+}
+
+.content p {
+  margin-bottom: 1.25rem;
+}
+
+.content strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.content sup {
+  font-size: 0.75em;
+}
+
+.figure {
+  margin: 2rem 0;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--transition-slow);
+}
+
+.figure:hover .image {
+  transform: scale(1.02);
+}
+
+.caption {
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  text-align: center;
+  border-top: 1px solid var(--border-color);
+  background-color: var(--bg-primary);
+  font-style: italic;
+}
+
+.videoWrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  margin: 2rem 0;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-color);
+}
+
+.iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}

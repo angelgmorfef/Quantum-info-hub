@@ -9,6 +9,12 @@ const allowedOrigins = [
   'http://localhost',        // Nginx production frontend
 ];
 
+// Si estamos en producción y Render inyecta la URL del frontend
+if (process.env.FRONTEND_URL) {
+  // Render URLs pueden no tener trailing slash, pero por seguridad, la agregamos tal cual
+  allowedOrigins.push(process.env.FRONTEND_URL);
+}
+
 /** @type {import('cors').CorsOptions} */
 const corsOptions = {
   origin: (origin, callback) => {

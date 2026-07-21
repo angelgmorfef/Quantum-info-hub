@@ -1,0 +1,37 @@
+services:
+  # ─── SERVICIO WEB (BACKEND) ───
+  - type: web
+    name: quantum-hub-backend
+    env: node
+    rootDir: backend
+    buildCommand: npm install
+    startCommand: npm start
+    plan: free # Usa el plan gratuito de Render (puedes cambiarlo si necesitas más poder)
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 4000
+      - key: NEWSDATA_API_KEY
+        sync: false # false significa que Render te pedirá que la ingreses manualmente en el panel de control por seguridad
+      - key: FRONTEND_URL
+        fromService:
+          type: web
+          name: quantum-hub-frontend
+          envVarKey: RENDER_EXTERNAL_URL
+
+  # ─── SITIO ESTÁTICO (FRONTEND) ───
+  - type: web # Render trata los sitios estáticos como 'web' con env 'static' en YAML
+    name: quantum-hub-frontend
+    env: static
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        fromService:
+          type: web
+          name: quantum-hub-backend
+          envVarKey: RENDER_EXTERNAL_URL
+        # Como necesitamos que acabe en /api, añadiremos el sufijo directamente en el código de React o usando un script, 
+        # pero para simplificar, usaremos RENDER_EXTERNAL_URL y ajustaremos quantumApi.js si es necesario.

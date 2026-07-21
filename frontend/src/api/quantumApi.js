@@ -3,7 +3,11 @@
  * Centralized fetch functions for all backend endpoints.
  */
 
-const BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000/api';
+let BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000/api';
+// Si Render inyecta la URL base (ej. https://quantum-hub-backend.onrender.com), le añadimos /api
+if (!BASE_URL.endsWith('/api')) {
+  BASE_URL = `${BASE_URL.replace(/\/$/, '')}/api`;
+}
 
 /**
  * Generic fetch wrapper with error handling.

@@ -1,5 +1,5 @@
 /**
- * Quantum Hub — News Controller
+ * Tech Hub — News Controller
  * Handles fetching news from NewsData API.
  */
 
@@ -13,8 +13,8 @@ const getNews = async (req, res) => {
       });
     }
 
-    // Fetch news related to science/quantum computing
-    const response = await fetch(`https://newsdata.io/api/1/latest?apikey=${apiKey}&q=quantum%20computing`);
+    // Fetch news related to technology
+    const response = await fetch(`https://newsdata.io/api/1/latest?apikey=${apiKey}&q=technology&language=es`);
 
     if (!response.ok) {
       const errorData = await response.json().catch(() => ({}));

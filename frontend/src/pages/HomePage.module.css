@@ -74,6 +74,10 @@
 .contentSection {
   flex: 1;
   min-width: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  width: 100%;
 }
 
 .state {

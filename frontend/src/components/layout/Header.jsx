@@ -13,7 +13,8 @@ const Header = ({ theme, onToggleTheme }) => {
         {/* Logo */}
         <div className={styles.logo}>
           <Link to="/" aria-label="Volver al inicio">
-            <span className={styles.logoSymbol}>|Ψ⟩</span> Quantum Hub
+            <span className={styles.logoIcon}>⚛️</span>
+            <span className={styles.logoText}>Tech News Hub</span>
           </Link>
         </div>
 

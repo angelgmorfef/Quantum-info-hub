@@ -17,20 +17,20 @@ const HomePage = () => {
       <section className={styles.hero}>
         <span className={styles.heroTag}>// Actualidad Tecnológica</span>
         <h1 className={styles.heroTitle}>
-          Las Últimas Noticias en Computación Cuántica
+          Las Últimas Noticias del Mundo Tech
         </h1>
         <p className={styles.heroSubtitle}>
-          Mantente al día con los avances más recientes, descubrimientos y debates sobre el futuro cuántico.
+          Mantente al día con los avances más recientes, descubrimientos de software, IA y hardware a nivel global.
         </p>
       </section>
 
       {/* Main Content Grid */}
       <div className={styles.container}>
         <main className={styles.mainLayout} id="main-content">
-          <section className={styles.contentSection} aria-label="Noticias cuánticas">
+          <section className={styles.contentSection} aria-label="Noticias tecnológicas">
             {loading && (
               <div className={styles.state}>
-                <p className={styles.loadingText}>Cargando noticias cuánticas...</p>
+                <p className={styles.loadingText}>Cargando noticias tecnológicas...</p>
               </div>
             )}
 
@@ -52,7 +52,7 @@ const HomePage = () => {
             )}
 
             {newsArticles && newsArticles.map((article, index) => (
-              <NewsCard key={article.link || index} {...article} />
+              <NewsCard key={article.link || index} {...article} index={index} />
             ))}
           </section>
         </main>

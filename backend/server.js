@@ -79,7 +79,7 @@ app.use((err, _req, res, _next) => {
 
 // ─── Start Server ───────────────────────────────────────────
 app.listen(PORT, () => {
-  console.log(`\n🚀 Quantum Hub API corriendo en http://localhost:${PORT}`);
+  console.log(`\n🚀 Tech Hub API corriendo en http://localhost:${PORT}`);
   console.log(`📡 Endpoints disponibles:`);
   console.log(`   GET /api/concepts`);
   console.log(`   GET /api/concepts/:id`);

@@ -1,0 +1,32 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "4000:4000"
+    environment:
+      - PORT=4000
+      - NODE_ENV=production
+      # - GNEWS_API_KEY=YOUR_GNEWS_API_KEY_HERE # Recomiendo inyectar esto desde el sistema local o un archivo .env externo
+    env_file:
+      - ./backend/.env
+    networks:
+      - quantum_network
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - quantum_network
+
+networks:
+  quantum_network:
+    driver: bridge

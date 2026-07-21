@@ -6,6 +6,7 @@
 const allowedOrigins = [
   'http://localhost:5173',   // Vite dev server (React frontend)
   'http://localhost:3000',   // Alternative dev port
+  'http://localhost',        // Nginx production frontend
 ];
 
 /** @type {import('cors').CorsOptions} */

@@ -29,3 +29,6 @@ export const fetchTimeline = () => apiFetch('/timeline');
 
 /** Fetch the quantum hardware comparison data */
 export const fetchHardware = () => apiFetch('/hardware');
+
+/** Fetch dynamic news from GNews API */
+export const fetchNews = () => apiFetch('/news');

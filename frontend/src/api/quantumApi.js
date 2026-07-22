@@ -3,9 +3,16 @@
  * Centralized fetch functions for all backend endpoints.
  */
 
-let BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000/api';
-// Si Render inyecta la URL base (ej. https://quantum-hub-backend.onrender.com), le añadimos /api
-if (!BASE_URL.endsWith('/api')) {
+let BASE_URL = import.meta.env.VITE_API_URL;
+
+if (!BASE_URL) {
+  // En producción (Vercel) usamos la ruta relativa que vercel.json redirige al backend.
+  // En desarrollo, apuntamos al puerto 4000 de Express.
+  BASE_URL = import.meta.env.PROD ? '/api' : 'http://localhost:4000/api';
+}
+
+// Si se inyecta una URL externa (ej. Render), nos aseguramos de que termine en /api
+if (BASE_URL.startsWith('http') && !BASE_URL.endsWith('/api')) {
   BASE_URL = `${BASE_URL.replace(/\/$/, '')}/api`;
 }
 

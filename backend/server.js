@@ -78,13 +78,18 @@ app.use((err, _req, res, _next) => {
 });
 
 // ─── Start Server ───────────────────────────────────────────
-app.listen(PORT, () => {
-  console.log(`\n🚀 Tech Hub API corriendo en http://localhost:${PORT}`);
-  console.log(`📡 Endpoints disponibles:`);
-  console.log(`   GET /api/concepts`);
-  console.log(`   GET /api/concepts/:id`);
-  console.log(`   GET /api/timeline`);
-  console.log(`   GET /api/hardware`);
-  console.log(`   GET /api/news`);
-  console.log(`   GET /api/health\n`);
-});
+if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`\n🚀 Tech Hub API corriendo en http://localhost:${PORT}`);
+    console.log(`📡 Endpoints disponibles:`);
+    console.log(`   GET /api/concepts`);
+    console.log(`   GET /api/concepts/:id`);
+    console.log(`   GET /api/timeline`);
+    console.log(`   GET /api/hardware`);
+    console.log(`   GET /api/news`);
+    console.log(`   GET /api/health\n`);
+  });
+}
+
+// Requerido por Vercel para Serverless Functions
+module.exports = app;

@@ -1,6 +1,7 @@
 {
   "name": "quantum-hub-backend",
   "version": "1.0.0",
+  "packageManager": "pnpm@9.15.9",
   "description": "API RESTful para servir datos científicos sobre computación cuántica.",
   "main": "server.js",
   "scripts": {

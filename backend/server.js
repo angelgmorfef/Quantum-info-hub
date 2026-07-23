@@ -77,8 +77,10 @@ app.use((err, _req, res, _next) => {
   });
 });
 
-// ─── Start Server ───────────────────────────────────────────
-if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
+const serverless = require('serverless-http');
+
+// ─── Start Server (Local Environment Only) ──────────────────
+if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL && !process.env.NETLIFY) {
   app.listen(PORT, () => {
     console.log(`\n🚀 Tech Hub API corriendo en http://localhost:${PORT}`);
     console.log(`📡 Endpoints disponibles:`);
@@ -91,5 +93,6 @@ if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL) {
   });
 }
 
-// Requerido por Vercel para Serverless Functions
-module.exports = app;
+// ─── Serverless Export ──────────────────────────────────────
+module.exports = app; // Mantenido para Vercel o testing
+module.exports.handler = serverless(app); // Añadido para Netlify

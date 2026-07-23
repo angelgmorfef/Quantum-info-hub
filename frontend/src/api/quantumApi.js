@@ -6,12 +6,12 @@
 let BASE_URL = import.meta.env.VITE_API_URL;
 
 if (!BASE_URL) {
-  // En producción (Vercel) usamos la ruta relativa que vercel.json redirige al backend.
-  // En desarrollo, apuntamos al puerto 4000 de Express.
-  BASE_URL = import.meta.env.PROD ? '/api' : 'http://localhost:4000/api';
+  // Fallback seguro: Si no hay variable, en desarrollo usa localhost. 
+  // En producción (Vercel) fallará si no está definida en el panel.
+  BASE_URL = 'http://localhost:4000/api';
 }
 
-// Si se inyecta una URL externa (ej. Render), nos aseguramos de que termine en /api
+// Asegurar formato correcto de la URL inyectada
 if (BASE_URL.startsWith('http') && !BASE_URL.endsWith('/api')) {
   BASE_URL = `${BASE_URL.replace(/\/$/, '')}/api`;
 }

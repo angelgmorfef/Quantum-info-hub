@@ -1,9 +1,9 @@
 [build]
   command = "pnpm --filter backend install"
-  functions = "backend"
+  functions = "backend/functions"
 
 [[redirects]]
   from = "/api/*"
-  to = "/.netlify/functions/server/:splat"
+  to = "/.netlify/functions/api/:splat"
   status = 200
   force = true

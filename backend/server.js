@@ -77,8 +77,6 @@ app.use((err, _req, res, _next) => {
   });
 });
 
-const serverless = require('serverless-http');
-
 // ─── Start Server (Local Environment Only) ──────────────────
 if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL && !process.env.NETLIFY) {
   app.listen(PORT, () => {
@@ -93,6 +91,5 @@ if (process.env.NODE_ENV !== 'production' && !process.env.VERCEL && !process.env
   });
 }
 
-// ─── Serverless Export ──────────────────────────────────────
-module.exports = app; // Mantenido para Vercel o testing
-module.exports.handler = serverless(app); // Añadido para Netlify
+// ─── Export ─────────────────────────────────────────────────
+module.exports = app;

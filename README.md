@@ -1,82 +1,88 @@
 # 🚀 Quantum Hub - El Futuro de los Computadores Cuánticos
 
-[![HTML5](https://img.shields.io/badge/HTML5-Semántico-orange.svg?style=flat-square&logo=html5)](https://developer.mozilla.org/es/docs/Web/HTML)
-[![CSS3](https://img.shields.io/badge/CSS3-Moderno-blue.svg?style=flat-square&logo=css3)](https://developer.mozilla.org/es/docs/Web/CSS)
-[![JSES6+](https://img.shields.io/badge/JavaScript-ES6%2B-yellow.svg?style=flat-square&logo=javascript)](https://developer.mozilla.org/es/docs/Web/JavaScript)
+[![React](https://img.shields.io/badge/Frontend-React%2BVite-blue.svg?style=flat-square&logo=react)](https://react.dev)
+[![Node.js](https://img.shields.io/badge/Backend-Node.js%2BExpress-green.svg?style=flat-square&logo=nodedotjs)](https://nodejs.org)
+[![Vercel](https://img.shields.io/badge/Deployment-Vercel-black.svg?style=flat-square&logo=vercel)](https://vercel.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](LICENSE)
 
-Un repositorio optimizado y estructurado como una **experiencia de aprendizaje significativa**, enfocado en la divulgación científica sobre la computación cuántica, sus oportunidades tecnológicas y sus riesgos de ciberseguridad.
+Un repositorio optimizado y estructurado enfocado en la divulgación científica sobre la computación cuántica, sus oportunidades tecnológicas y sus riesgos de ciberseguridad.
 
-Este proyecto fue refactorizado y optimizado aplicando los recursos, patrones de diseño y estándares del bootcamp [JSCamp](https://www.jscamp.dev/).
+Este proyecto ha evolucionado de ser un sitio web estático tradicional a una **Aplicación Full-Stack** moderna (Monorepo), implementando las mejores prácticas de desarrollo web interactivo y arquitectura Serverless en la nube.
 
 ---
 
 ## 🎯 Propósito del Proyecto
-Demostrar el poder de la **Web Nativa** (HTML, CSS y JS puro, sin frameworks pesados ni dependencias externas) para crear una interfaz de usuario fluida, accesible, responsiva y con una estética visual premium que mejore la experiencia del lector.
+Crear una plataforma educativa altamente interactiva y de diseño premium. El proyecto demuestra la integración exitosa de un frontend fluido (React) con una API RESTful robusta (Express), ambos optimizados para ser desplegados como aplicaciones y funciones Serverless independientes en la nube, garantizando un rendimiento y escalabilidad excepcionales.
 
 ---
 
 ## ✨ Características Principales
 
-*   **HTML5 Altamente Semántico & Accesibilidad (a11y):** Estructura robusta mediante etiquetas semánticas (`<article>`, `<section>`, `<aside>`), navegación rápida mediante teclado (`skip-link`) y soporte para lectores de pantalla mediante roles ARIA.
-*   **Estética Visual Premium Adaptativa:** Diseño moderno inspirado en la paleta de JSCamp (fondo oscuro sofisticado con gradientes de acento en violeta y cian cuántico).
-*   **Fondo de Partículas Cuánticas Interactivas:** Animación en tiempo real programada sobre `HTML5 Canvas API` que simula qubits entrelazándose en superposición de estados ($|0\rangle$ o $|1\rangle$).
-*   **Modo Claro / Oscuro Persistente:** Tema de color adaptativo que se sincroniza con las preferencias del sistema o se selecciona manualmente, guardando la configuración en `localStorage`.
-*   **Barra de Lectura y Estimaciones Activas:** Cálculo en tiempo real del tiempo de lectura estimado del artículo y barra superior de progreso que responde dinámicamente al scroll.
-*   **Menú Lateral de Contenidos Activo (TOC):** Seguimiento inteligente mediante la API `IntersectionObserver` que resalta la sección que el usuario está leyendo actualmente, además de un efecto de parpadeo (`flash-highlight`) al pulsar un enlace.
-*   **Formulario de Contacto Validado:** Validaciones nativas robustas de campos obligatorios, patrones de entrada de datos y tipos de inputs HTML5.
+*   **Arquitectura Full-Stack Monorepo:** Separación limpia de responsabilidades entre el cliente (`frontend/`) y el servidor (`backend/`), facilitando la mantenibilidad, escalabilidad y los despliegues independientes en Vercel.
+*   **Frontend Interactivo (React + Vite):** Interfaz de usuario dinámica basada en componentes. Una SPA (Single Page Application) rápida que consume datos centralizados de la API evitando recargas innecesarias en el navegador.
+*   **API RESTful Segura (Node.js + Express):** Backend estructurado con rutas modulares, controladores y middlewares de protección de grado de producción (Helmet para cabeceras HTTP, Rate Limiting para prevenir abusos y configuración estricta de CORS).
+*   **Despliegue Serverless Optimizado:** El servidor Node.js no requiere estar encendido 24/7. Fue adaptado (exportando la app de Express) para que Vercel lo envuelva como Funciones Serverless ("bajo demanda"), reduciendo costos e infraestructura.
+*   **Experiencia de Usuario Premium:** Temas adaptativos (Modo oscuro/claro), componentes interactivos para explicar conceptos cuánticos y un diseño moderno enfocado en la legibilidad científica.
 
 ---
 
 ## 📁 Estructura del Repositorio
 
+El proyecto sigue una estructura de **Monorepo**, conteniendo ambos entornos aislados pero conviviendo bajo el mismo control de versiones:
+
 ```
 Quantum-info-hub/
-├── index.html                    # Artículo principal sobre computadores cuánticos
-├── devo.html                     # Biografía y evolución del proyecto (Sobre DEVo)
-├── contacto.html                 # Formulario de contacto
+├── frontend/                     # Aplicación cliente (React + Vite)
+│   ├── src/                      # Código fuente (Componentes, API Client)
+│   ├── public/                   # Archivos y assets estáticos
+│   ├── package.json              # Dependencias de React y Vite
+│   └── vite.config.js            # Configuración del empaquetador
+│
+├── backend/                      # API RESTful (Node.js + Express)
+│   ├── routes/                   # Definición de endpoints (/api/concepts, etc)
+│   ├── config/                   # Configuración de CORS y Seguridad
+│   ├── server.js                 # Entry point (Adaptado para Vercel Serverless)
+│   ├── vercel.json               # Configuración de enrutamiento Serverless
+│   └── package.json              # Dependencias del servidor Express
+│
 ├── README.md                     # Documentación técnica
-├── LICENSE                       # Licencia MIT del proyecto
-├── .gitignore                    # Archivos ignorados por Git
-└── asset/
-    ├── css/
-    │   ├── reset.css             # Normalización CSS moderna
-    │   ├── index.css             # Tokens de diseño y variables globales
-    │   └── components.css        # Estilos aislados de componentes interactivos
-    ├── js/
-    │   ├── index.js              # Entry point modular
-    │   └── modules/
-    │       ├── theme-toggle.js   # Gestión de tema claro/oscuro
-    │       ├── scroll-observer.js # Intersection Observers y scroll
-    │       ├── reading-progress.js # Estimación y barra de progreso
-    │       └── quantum-particles.js # Simulación Canvas de qubits
-    └── img/
-        ├── favicon.png           # Ícono del sitio
-        └── [imágenes de soporte optimizadas]
+└── LICENSE                       # Licencia MIT del proyecto
 ```
 
 ---
 
 ## 🛠️ Cómo Ejecutar el Proyecto Localmente
 
-1.  Clona este repositorio:
-    ```bash
-    git clone https://github.com/angelgmorfef/Quantum-info-hub.git
-    ```
-2.  Accede a la carpeta del proyecto:
-    ```bash
-    cd Quantum-info-hub
-    ```
-3.  Abre el archivo `index.html` en tu navegador. 
-    *   *Recomendación:* Utiliza una extensión de servidor local como **Live Server** en VS Code para que las importaciones de ES Modules (`import/export`) funcionen correctamente y disfrutes de Live Reload.
+Para correr este proyecto en tu máquina, necesitarás [Node.js](https://nodejs.org/) instalado. Al ser un monorepo, debes iniciar el backend y el frontend por separado en dos consolas distintas.
+
+### 1. Iniciar la API (Backend)
+```bash
+cd backend
+npm install
+npm run dev   # Arranca el servidor Express (por defecto en http://localhost:4000)
+```
+
+### 2. Iniciar la Interfaz (Frontend)
+Abre una nueva terminal en la raíz del proyecto:
+```bash
+cd frontend
+npm install
+npm run dev   # Arranca el servidor Vite (por defecto en http://localhost:5173)
+```
+
+### 3. Conexión de Variables (.env)
+Para el desarrollo local, asegúrate de que el frontend apunte al servidor local correcto. 
+Crea un archivo `.env` dentro de la carpeta `frontend/` con:
+`VITE_API_URL=http://localhost:4000/api`
 
 ---
 
-## 📚 Módulos JSCamp Aplicados
+## 🌐 Despliegue en Producción (Vercel)
 
-Este proyecto implementa y demuestra competencias clave de los siguientes módulos del temario de [JSCamp](https://www.jscamp.dev/):
-*   **Módulo 02 (HTML & CSS):** Maquetación semántica, responsive design mobile-first con Custom Properties, efectos de blur y transiciones fluidas.
-*   **Módulo 03 (JavaScript):** Modularización con ES Modules, manejo del DOM asíncrono, eventos personalizados, APIs nativas del navegador (`IntersectionObserver`, `Canvas`, `localStorage`).
+Este repositorio está preparado para funcionar sin problemas en el entorno de Vercel creando dos "Proyectos" distintos que apuntan al mismo repositorio:
+
+1.  **Para el Frontend:** Se debe establecer el *Root Directory* como `frontend`. Vercel auto-detectará a Vite. Las peticiones a la base de datos se configuran agregando la variable `VITE_API_URL` en el panel web.
+2.  **Para el Backend:** Se debe establecer el *Root Directory* como `backend`. Gracias a las configuraciones en `backend/vercel.json` y a `module.exports = app`, Vercel despliega automáticamente la API como funciones Serverless. Las solicitudes externas se permiten configurando el `FRONTEND_URL` en las variables de entorno de Vercel para autorizar el CORS.
 
 ---
 

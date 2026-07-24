@@ -7,7 +7,7 @@ const allowedOrigins = [
   'http://localhost:5173',   // Vite dev server (React frontend)
   'http://localhost:3000',   // Alternative dev port
   'http://localhost',        // Nginx production frontend
-  'https://TU-FRONTEND.vercel.app' // 🔴 REEMPLAZA ESTO CON LA URL REAL DE TU FRONTEND (SIN / AL FINAL)
+  'https://quantum-info-hub-qhyd.vercel.app' // URL de producción en Vercel
 ];
 
 // Si estamos en producción y Render inyecta la URL del frontend
